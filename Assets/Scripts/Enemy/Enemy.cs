@@ -26,7 +26,7 @@ public class Enemy : MonoBehaviour, IPoolObject
         SetStartValue();
         StartMove();
     }
-    public void ReturnToPool()
+    public virtual void ReturnToPool()
     {
         enemyMover.StopMove();
         gameObject.SetActive(false);
@@ -38,20 +38,23 @@ public class Enemy : MonoBehaviour, IPoolObject
         {
             Death();
         }
+        Debug.Log(health);
     }
     public void StartMove() 
     {
         enemyMover.StartMove();
     }
-    private void Death() 
+    protected virtual void Death() 
     {
-        //Сделать здесь обращение к ui чтобы увеличить деньги
         enemyMover.StopMove();
         ReturnToPool();
     }
-    public void OnFinishMove() 
+    public virtual void OnFinishMove() 
     {
         ReturnToPool();
-        //сделать обращение к ui и уменьшение жизней на значение damage
     }
+    public int GetDanageValue() =>
+        data.GetDamage();
+    public int GetCoints() =>
+        data.GetCoinsForDeath();
 }

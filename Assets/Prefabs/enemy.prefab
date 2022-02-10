@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7998573185985663844}
   - component: {fileID: 4711749843526609193}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 7950726944221322040}
   - component: {fileID: 6901939904922031957}
   - component: {fileID: 656010639992204344}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 98557fe3b6dfb5145adcef17757b3353, type: 2}
-  speed: 5
+  speed: 0.2
 --- !u!61 &6901939904922031957
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -202,7 +202,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4684573757419397934}
   - component: {fileID: 4684573757419397933}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}

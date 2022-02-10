@@ -15,7 +15,7 @@ public class EnemyMover : EnemyMoverBase
 
     public override void StartMove()
     {
-        tween = transform.DOPath(data.GetArrVectors(), speed, PathType.Linear, PathMode.Full3D, gizmoColor: Color.green).SetEase(Ease.Linear).SetAutoKill(true);
+        tween = transform.DOPath(data.GetArrVectors(), 1/speed, PathType.Linear, PathMode.Full3D, gizmoColor: Color.green).SetEase(Ease.Linear).SetAutoKill(true);
     }
 
     public override void StopMove() 

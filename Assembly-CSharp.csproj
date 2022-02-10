@@ -63,26 +63,31 @@
     <Compile Include="Assets\Tilemap\Tiles\Pipeline Tile\Scripts\PipelineTile.cs" />
     <Compile Include="Assets\Tilemap\Destructible\Scripts\Destructible.cs" />
     <Compile Include="Assets\Scripts\ScriptableObject\RouteData.cs" />
+    <Compile Include="Assets\Scripts\Pool\ObjectPooler.cs" />
     <Compile Include="Assets\Tilemap\Destructible\Scripts\MouseClickBomb.cs" />
     <Compile Include="Assets\Tilemap\Brushes\Tint Brush Smooth\Scripts\TintTextureGenerator.cs" />
     <Compile Include="Assets\Tilemap\Rule Tiles\Scripts\RuleOverrideTile.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Tilemap\Brick\Scripts\GameEnd.cs" />
     <Compile Include="Assets\Tilemap\Rule Tiles\Scripts\IsometricRuleTile.cs" />
     <Compile Include="Assets\Tilemap\Brick\Scripts\Ball.cs" />
+    <Compile Include="Assets\Scripts\Pool\IPoolObject.cs" />
     <Compile Include="Assets\Tilemap\Rule Tiles\Scripts\HexagonalRuleTile.cs" />
     <Compile Include="Assets\Scripts\ScriptableObject\EnemyData.cs" />
     <Compile Include="Assets\Tilemap\Rule Tiles\Scripts\RuleTile.cs" />
     <Compile Include="Assets\Tilemap\Destructible\Scripts\Explosion.cs" />
+    <Compile Include="Assets\Scripts\Finish.cs" />
     <Compile Include="Assets\Tilemap\Brick\Scripts\Brick.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyMover.cs" />
     <Compile Include="Assets\Tilemap\Tiles\Animated Tile\Scripts\AnimatedTile.cs" />
     <Compile Include="Assets\Tilemap\Rule Tiles\Rule Override Tile\Scripts\ChildRuleTile.cs" />
-    <Compile Include="Assets\Scripts\Pool\ObjectPooler.cs" />
-    <Compile Include="Assets\Scripts\Pool\IPoolObject.cs" />
-    <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
-    <Compile Include="Assets\Scripts\Enemy\EnemyMover.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyMoverBase.cs" />
-    <Compile Include="Assets\Scripts\GameManager.cs" />
-    <Compile Include="Assets\Scripts\Finish.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerManager.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerBase.cs" />
+    <Compile Include="Assets\Scripts\Gun\GunBase.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObject\GunData.cs" />
+    <Compile Include="Assets\Scripts\Gun\Gun.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Tilemap\Normal Mapping\Material\Shader\NormalMappedTile.shader" />

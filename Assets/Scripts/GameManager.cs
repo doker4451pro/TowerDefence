@@ -10,15 +10,13 @@ public class GameManager : MonoBehaviour
     //чтобы можно было выбирать кого делать лучше, а кого нет
     [SerializeField]
     private List<EnemyData> enemyDatas;
-    public static GameManager Instance;
+
 
     private string path = Application.streamingAssetsPath;
     private int xValue;
     private int timeValue;
-    private int nValue;
     private void Awake()
     {
-        Instance = this;
         SetValuesFromText();
     }
 
@@ -48,26 +46,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public int GetXValue() =>
-        xValue;
-    public int GetTime() =>
-        timeValue;
-    public int GetNValue() =>
-        nValue;
-
     private void SetValuesFromText() 
     {
         var json = File.ReadAllText(path + "/textData.json");
         var data = JsonUtility.FromJson<TextData>(json);
         xValue = data.X;
         timeValue = data.Time;
-        nValue = data.N;
     }
     private class TextData 
     {
         public int X;
         public int Time;
-        public int N;
     }
 }
 
