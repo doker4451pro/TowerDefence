@@ -15,17 +15,28 @@ public class EnemyData : ScriptableObject
     [SerializeField]
     private int changes;
 
-    public int GetMaxHealth() =>
-        maxhealth;
-    public int GetDamage() =>
-        damage;
-    public int GetCoinsForDeath() =>
-        coinsForDeath;
+    private int currentMaxHealth;
+    private int currentDamage;
+    private int currentcoinsForDeath;
 
+    public int GetMaxHealth() =>
+        currentMaxHealth;
+    public int GetDamage() =>
+        currentDamage;
+    public int GetCoinsForDeath() =>
+        currentcoinsForDeath;
+    
     public void Upgrade() 
     {
-        maxhealth += Random.Range(0, changes + 1);
-        damage += Random.Range(0, changes + 1);
-        coinsForDeath += Random.Range(0, changes + 1);
+        currentMaxHealth += Random.Range(0, changes + 1);
+        currentDamage += Random.Range(0, changes + 1);
+        currentcoinsForDeath += Random.Range(0, changes + 1);
+        Debug.Log(currentMaxHealth);
+    }
+    public void SetDefault() 
+    {
+        currentcoinsForDeath = coinsForDeath;
+        currentDamage = damage;
+        currentMaxHealth = maxhealth;
     }
 }

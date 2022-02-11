@@ -23,6 +23,10 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         StartCoroutine(MoveEnemy());
+        foreach (var item in enemyDatas)
+        {
+            item.SetDefault();
+        }
     }
 
     IEnumerator MoveEnemy() 

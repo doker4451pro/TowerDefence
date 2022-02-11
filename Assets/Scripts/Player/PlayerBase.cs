@@ -11,13 +11,12 @@ public abstract class PlayerBase : MonoBehaviour
     [SerializeField]
     UnityEvent LisesZeroEvent;
     [SerializeField]
-    UnityEvent ChangeLiveValueEvent;
+    protected UnityEvent<int> ChangeLiveValueEvent;
     [SerializeField]
-    UnityEvent ChangeMoneyEvent;
+    protected UnityEvent<int> ChangeMoneyEvent;
 
     private int money;
 
-    protected int deathCounter;
     //даю возможно изменять значения чтобы можно было добавить фичи которые будут рабоать с золом и жизнями
     public int Lives
     {
@@ -30,7 +29,7 @@ public abstract class PlayerBase : MonoBehaviour
             if (value <= 0)
                 LisesZeroEvent?.Invoke();
             else if (value != lives)
-                ChangeLiveValueEvent?.Invoke();
+                ChangeLiveValueEvent?.Invoke(value);
             lives = value;
         }
     }
@@ -40,13 +39,12 @@ public abstract class PlayerBase : MonoBehaviour
         protected set
         {
             if (value != money)
-                ChangeMoneyEvent?.Invoke();
+                ChangeMoneyEvent?.Invoke(value);
             money = value;
         }
     }
 
     public abstract void TakeDamage(int damage);
-    public abstract void TakeMoney(int coins, bool forDeathEnemy=true);
-    public int GetDeathCouner() =>
-        deathCounter;
+    public abstract void TakeMoney(int coins);
+    public abstract bool CanSpendMoney(int coins);
 }

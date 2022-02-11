@@ -9,11 +9,18 @@ public class Enemy : MonoBehaviour, IPoolObject
     [SerializeField]
     private EnemyMoverBase enemyMover;
 
+    //чтобы сделать несколько противников
+    protected PlayerBase player;
+
     private int health;
 
     private void Awake()
     {
         SetStartValue();
+    }
+    private void Start()
+    {
+        player = Dispenser.Instance.GetPlayer();
     }
     protected virtual void SetStartValue()
     {
@@ -38,7 +45,6 @@ public class Enemy : MonoBehaviour, IPoolObject
         {
             Death();
         }
-        Debug.Log(health);
     }
     public void StartMove() 
     {
@@ -46,6 +52,8 @@ public class Enemy : MonoBehaviour, IPoolObject
     }
     protected virtual void Death() 
     {
+        Stats.Instance.SetStaticByName("DeadEnemy", 1);
+        player.TakeMoney(data.GetCoinsForDeath());
         enemyMover.StopMove();
         ReturnToPool();
     }
